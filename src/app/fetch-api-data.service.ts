@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { catchError } from 'rxjs/internal/operators';
+import { catchError } from 'rxjs/operators';
 import {
   HttpClient,
   HttpHeaders,
@@ -20,7 +20,7 @@ const username = localStorage.getItem('user');
 @Injectable({
   providedIn: 'root',
 })
-export class UserRegistrationService {
+export class FetchApiDataService {
   // Inject the HttpClient module to the constructor params
   // This will provide HttpClient to the entire class, making it available via this.http
   constructor(private http: HttpClient) {}
@@ -34,12 +34,9 @@ export class UserRegistrationService {
   }
 
   // Making the api call for the user login endpoint
-  public userLogin(username: any, password: any): Observable<any> {
+  public userLogin(userDetails:any): Observable<any> {
     return this.http
-      .post(apiUrl + 'login', {
-        Username: username,
-        Password: password
-      })
+      .post(apiUrl + 'login', userDetails)
       .pipe(catchError(this.handleError));
   };
 
