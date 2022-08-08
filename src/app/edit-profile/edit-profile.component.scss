@@ -3,24 +3,24 @@ $cardColor: #fff;
 $textColor: #343a40;
 $boxShadowColor: #e9ecef;
 
-.login-dialog {
+.edit-profile-dialog {
     background-color: $cardColor;
     margin-top: 0px;
     box-shadow: none;
 }
 
-.login-dialog-title {
+.edit-profile-dialog-title {
     color: $textColor;
 }
 
-.login-dialog-content {
+.edit-profile-dialog-content {
     color: $textColor;
 }
 
-::ng-deep .login-custom>mat-dialog-container {
+::ng-deep .edit-profile-custom>mat-dialog-container {
     background-color: $cardColor;
 }
 
-.login-actions {
+.edit-profile-actions {
     display: flex
 }

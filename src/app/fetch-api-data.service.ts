@@ -43,7 +43,7 @@ export class FetchApiDataService {
   // Making the api call to get the data on all movies
   getAllMovies(): Observable<any> {
     return this.http
-      .get(apiUrl + 'movies', {
+      .get('https://myflixmovies-app.herokuapp.com/movies', {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         })
@@ -125,9 +125,9 @@ export class FetchApiDataService {
   }
 
   // Making the api call to add a movie to user's favorites movies list
-  addFavoriteMovie(movieID: any): Observable<any> {
+  addFavoriteMovie(movieID: string): Observable<any> {
     return this.http
-      .post(apiUrl + `users/${username}/movies/${movieID}`, {
+      .post(apiUrl + `users/${username}/movies/${movieID}`, null, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         })
